@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+  <h:head >
+    <title>Tiny calculator</title>
+    <h:outputStylesheet library="css" name="CalculatorStyle.css"/>
+  </h:head>
+  <h:body>
+    <h:graphicImage alt="BasicArithmetics"
+                    library="images"
+                    name="BasicArithmetics.png"/>
+    <h1>Tiny calculator</h1>
+    <h:form id="calculator">
+      <ui:composition template="./CalculatorTemplate.xhtml">
+        <ui:define name="content">
+          <h:outputLabel styleClass="label" for="result" value="Result"/>
+          <h:outputText id="result"
+                        value="#{calculatorBean.param1} +
+                        #{calculatorBean.param2} =
+                        #{calculatorBean.result}"/>
+         <br/>
+         <br/>
+         <h:commandButton value="Back" action="index"/>
+       </ui:define>
+     </ui:composition>
+    </h:form>
+  </h:body>
+</html>
